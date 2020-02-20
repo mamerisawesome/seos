@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "seos"
-version = "0.2.1"
+version = "0.3.0"
 description = "Simple Extractor on Sheets or SEOS wraps extraction on Google Sheets"
 repository = "https://github.com/mamerisawesome/seos"
 keywords = [

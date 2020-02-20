@@ -1,3 +1,54 @@
+def test_extract_sheet_id_not_set():
+    from seos import Seos
+    extractor = Seos(credentials_file="./credentials.json")
+
+    # start extraction
+    extractor.sheet_name = "ProductList"
+    extractor.scope = "A2:D2"
+    data = extractor.extract()
+
+    assert data == None
+
+def test_extract_sheet_name_not_set():
+    from seos import Seos
+    extractor = Seos(
+        credentials_file="./credentials.json",
+        spreadsheet_id="1q8H07VQKftV94Sw_DQVD0z29032Iq8nuhBlaaeBYAMc"
+    )
+
+    # start extraction
+    extractor.scope = "A2:D2"
+    data = extractor.extract()
+
+    assert data == None
+
+def test_extract_scope_not_set():
+    from seos import Seos
+    extractor = Seos(
+        credentials_file="./credentials.json",
+        spreadsheet_id="1q8H07VQKftV94Sw_DQVD0z29032Iq8nuhBlaaeBYAMc"
+    )
+
+    # start extraction
+    extractor.sheet_name = "ProductList"
+    data = extractor.extract()
+
+    assert data == None
+
+def test_extract_empty_data():
+    from seos import Seos
+    extractor = Seos(
+        credentials_file="./credentials.json",
+        spreadsheet_id="1q8H07VQKftV94Sw_DQVD0z29032Iq8nuhBlaaeBYAMc"
+    )
+
+    # start extraction
+    extractor.sheet_name = "NonExistentSheet"
+    extractor.scope = "A:A"
+    data = extractor.extract()
+
+    assert data == []
+
 def test_extract_data():
     from seos import Seos
     extractor = Seos(

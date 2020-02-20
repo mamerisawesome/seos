@@ -1,6 +1,7 @@
 import pickle
 import os.path
 from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 from rainbow import RainbowLogger
@@ -35,6 +36,10 @@ class Seos:
         self.sheet = self.service.spreadsheets()
         self.sheet_id = spreadsheet_id
 
+        # defaults
+        self._scope = ""
+        self._sheet_name = ""
+
     @property
     def sheet_name(self):
         return self._sheet_name
@@ -60,14 +65,15 @@ class Seos:
             logger.warning("Nothing to extract")
             return
 
-        result = self.sheet.values().get(
-            spreadsheetId=self.sheet_id,
-            range="{}!{}".format(self.sheet_name, self.scope)
-        ).execute()
+        try:
+            result = self.sheet.values().get(
+                spreadsheetId=self.sheet_id,
+                range="{}!{}".format(self.sheet_name, self.scope)
+            ).execute()
+        except HttpError:
+            return []
 
         values = result.get("values", [])
 
         if values:
             return values
-
-        return []

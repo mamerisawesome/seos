@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "seos"
-version = "0.3.2"
+version = "0.3.3"
 description = "Simple Extractor on Sheets or SEOS wraps extraction on Google Sheets"
 repository = "https://github.com/mamerisawesome/seos"
 keywords = [
@@ -12,6 +12,10 @@ keywords = [
 ]
 readme = "README.md"
 authors = ["Almer Mendoza <atmalmer23@gmail.com>"]
+maintainers = [
+    "Don Dilidili",
+    "Kiana Villaera"
+]
 license = "BSD-3-Clause"
 
 [tool.poetry.dependencies]

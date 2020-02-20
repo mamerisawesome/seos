@@ -3,7 +3,7 @@
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/seos)](https://pypi.python.org/pypi/seos/)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/mamerisawesome/seos/graphs/commit-activity)
-[![Coverage](https://raw.githubusercontent.com/seos/seos/master/assets/coverage.svg?sanitize=true)](https://github.com/mamerisawesome/seos)
+[![Coverage](https://raw.githubusercontent.com/seos/master/assets/coverage.svg?sanitize=true)](https://github.com/mamerisawesome/seos)
 [![Awesome Badges](https://img.shields.io/badge/badges-awesome-green.svg)](https://github.com/Naereen/badges)
 
 Simple Extractor on Sheets (or SEOS) is an extraction tool focused on Google Sheet data scraping. It uses Google's Python API client to access those data; this allows the library to access on a lower level functions defined by Google without the need of using another Sheets abstraction.

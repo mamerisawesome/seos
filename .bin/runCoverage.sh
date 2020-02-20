@@ -3,7 +3,7 @@ function runCoverage () {
     coverage html &&
     open htmlcov/index.html &&
 
-    rm assets/coverage.svg >/dev/null &&
+    rm assets/coverage.svg
     coverage-badge -o assets/coverage.svg
 }
 

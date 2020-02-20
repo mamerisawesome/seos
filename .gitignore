@@ -1,0 +1,16 @@
+# default name for venv
+py_modules
+
+# remove python outputs
+__pycache__
+*egg-info
+
+# project data
+credentials.json
+token.pickle
+seos/config/config.py
+pip-wheel-metadata
+*.pyc
+
+# vs code configs
+.vscode
